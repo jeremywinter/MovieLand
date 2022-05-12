@@ -1,24 +1,25 @@
-import './App.css';
+import { useEffect } from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+// eslint-disable-next-line
+const API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=679e825d";
+
+const App = () => {
+
+  const searchMovies = async (title) => {
+    const response = await fetch(`${API_URL}&s${title}`);
+    const data = await response.json();
+
+    console.log(data);
+  }
+
+  useEffect(() => {
+    searchMovies('Spiderman')
+  }, []);
+
+  return(
+    <h1>App</h1>
+  ); 
+};
 
 export default App;
