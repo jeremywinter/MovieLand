@@ -3,7 +3,6 @@ import "./App.css";
 
 // 679e825d
 // eslint-disable-next-line
-// "http://www.omdbapi.com/?i=tt3896198&apikey=679e825d";
 
 const API_URL = "http://www.omdbapi.com/?apikey=679e825d";
 
